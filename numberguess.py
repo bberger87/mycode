@@ -1,17 +1,25 @@
 #!/usr/bin/env python3
 
-secret num = 57
+num = 57
+found =0
+count =0
 
-guess = int(input["What's the magic numer? "))
+while found==0:
+    guess = int(input("What's the magic numer? "))
+    count += 1
+    if num == guess:
+        print("\nYour guess is correct the correct numer")
+        found = 1
+        break:
+    elif guess in range(num-5,num):
+        print("\nVery close but too low")
+    elif num > guess:
+        print("\nToo low")
+    elif guess in range(num+1,num+5):
+        print("\nVery close but too high")
+    elif num < guess:
+        print("\nToo high")
+    print("\nGuess again")
 
-if secret_num == guess:
-    print("Your guess is the correct the correct numer")
-
-elif secret_num -2 < guess:
-    print("Very close but too low")
-elif secret_num < guess:
-    print("Too low")
-elif secret_num +2 > guess:
-    print("Very close but too high")
-elif secret_num > guess:
-    print("Too high")
+print("\nTHank you")
+print(f"Took you {count} guesses to find the correct number")
